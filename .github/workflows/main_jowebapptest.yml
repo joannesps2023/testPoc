@@ -31,7 +31,6 @@ jobs:
           path: '${{ github.workspace }}/target/*.war'
 
   deploy:
-    download: none
     runs-on: windows-latest
     needs: build
     environment:
