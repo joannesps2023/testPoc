@@ -6,12 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="testPocapp" />
+        <module name="springapps" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="testPocapp" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springapps" options="-parameters" />
       <module name="testPocapp" options="-parameters" />
     </option>
   </component>

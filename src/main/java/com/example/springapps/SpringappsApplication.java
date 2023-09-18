@@ -1,13 +1,13 @@
-package com.example.testPocapp;
+package com.example.springapps;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TestPocappApplication {
+public class SpringappsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TestPocappApplication.class, args);
+		SpringApplication.run(SpringappsApplication.class, args);
 	}
 
 }
