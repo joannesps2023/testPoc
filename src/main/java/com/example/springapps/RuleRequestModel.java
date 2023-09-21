@@ -7,7 +7,7 @@ import java.util.Objects;
 @Component
 public class RuleRequestModel {
     String message;
-    Integer id;
+    String id;
     public String getMessage() {
         return message;
     }
@@ -15,11 +15,11 @@ public class RuleRequestModel {
         this.message = message;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 }
