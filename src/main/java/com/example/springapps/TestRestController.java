@@ -25,21 +25,30 @@ public class TestRestController {
     }
 
     @PostMapping ("postTest")
-    public String postTest(@RequestBody RuleRequestModel ruleRequestModel)
+    public RuleResponseModel postTest(@RequestBody RuleRequestModel ruleRequestModel)
     {
         System.out.println("inside postTest");
+        RuleResponseModel ruleResponseModel = new RuleResponseModel();
+        ruleResponseModel.setId(ruleRequestModel.getId());
+        ruleResponseModel.setMessage(ruleRequestModel.getMessage());
+
         if(ruleRequestModel.getMessage().equalsIgnoreCase("rule1"))
         {
-            return "rule1Data";
+            ruleResponseModel.setConfigName("template1");
+            return ruleResponseModel;
         }
         else if(ruleRequestModel.getMessage().equalsIgnoreCase("rule2"))
         {
-            return "rule2Data";
+            ruleResponseModel.setConfigName("template2");
+            return ruleResponseModel;
         }
         else if(ruleRequestModel.getMessage().equalsIgnoreCase("rule3"))
         {
-            return "rule3Data";
+            ruleResponseModel.setConfigName("template3");
+            return ruleResponseModel;
         }
-        return "defaultRuleData";
+        ruleResponseModel.setConfigName("defaulttemplate");
+        return ruleResponseModel;
     }
+
 }
