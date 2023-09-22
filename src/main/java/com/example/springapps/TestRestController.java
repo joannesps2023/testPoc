@@ -2,6 +2,9 @@ package com.example.springapps;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 public class TestRestController {
 
@@ -25,30 +28,33 @@ public class TestRestController {
     }
 
     @PostMapping ("postTest")
-    public RuleResponseModel postTest(@RequestBody RuleRequestModel ruleRequestModel)
+    public List<RuleResponseModel> postTest(@RequestBody RuleRequestModel ruleRequestModel)
     {
+        List<RuleResponseModel> ruleResponseWithRuleConfigDtlsList = new ArrayList<>();
         System.out.println("inside postTest");
         RuleResponseModel ruleResponseModel = new RuleResponseModel();
         ruleResponseModel.setId(ruleRequestModel.getId());
         ruleResponseModel.setMessage(ruleRequestModel.getMessage());
 
-        if(ruleRequestModel.getMessage().equalsIgnoreCase("rule1"))
-        {
-            ruleResponseModel.setConfigName("template1");
-            return ruleResponseModel;
-        }
-        else if(ruleRequestModel.getMessage().equalsIgnoreCase("rule2"))
-        {
-            ruleResponseModel.setConfigName("template2");
-            return ruleResponseModel;
-        }
-        else if(ruleRequestModel.getMessage().equalsIgnoreCase("rule3"))
-        {
-            ruleResponseModel.setConfigName("template3");
-            return ruleResponseModel;
-        }
-        ruleResponseModel.setConfigName("defaulttemplate");
-        return ruleResponseModel;
+
+            RuleConfig ruleConfig = new RuleConfig();
+            ruleConfig.setConfigName("config1");
+            ruleConfig.setTemplateName("template1");
+            ruleConfig.setId("gid1");
+            RuleResponseModel ruleResponseWithRuleConfigDtls = new RuleResponseModel();
+            ruleResponseWithRuleConfigDtls.setMessage(ruleRequestModel.getMessage());
+            ruleResponseWithRuleConfigDtls.setId(ruleRequestModel.getId());
+            ruleResponseWithRuleConfigDtls.setRuleConfig(ruleConfig);
+            ruleResponseWithRuleConfigDtlsList.add(ruleResponseWithRuleConfigDtls);
+
+        ruleConfig.setConfigName("config2");
+        ruleConfig.setTemplateName("template2");
+        ruleConfig.setId("gid2");
+        ruleResponseWithRuleConfigDtls.setMessage(ruleRequestModel.getMessage());
+        ruleResponseWithRuleConfigDtls.setId(ruleRequestModel.getId());
+        ruleResponseWithRuleConfigDtls.setRuleConfig(ruleConfig);
+        ruleResponseWithRuleConfigDtlsList.add(ruleResponseWithRuleConfigDtls);
+        return ruleResponseWithRuleConfigDtlsList;
     }
 
 }

@@ -4,16 +4,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class RuleResponseModel {
-    String message;
     String id;
+    String message;
 
-    String configName;
-    public String getMessage() {
-        return message;
-    }
-    public void setMessage(String message) {
-        this.message = message;
-    }
+    RuleConfig ruleConfig;
 
     public String getId() {
         return id;
@@ -23,11 +17,19 @@ public class RuleResponseModel {
         this.id = id;
     }
 
-    public String getConfigName() {
-        return configName;
+    public String getMessage() {
+        return message;
     }
 
-    public void setConfigName(String configName) {
-        this.configName = configName;
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public RuleConfig getRuleConfig() {
+        return ruleConfig;
+    }
+
+    public void setRuleConfig(RuleConfig ruleConfig) {
+        this.ruleConfig = ruleConfig;
     }
 }
