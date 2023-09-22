@@ -54,7 +54,7 @@ public class TestRestController {
         RuleResponseModel ruleResponseWithRuleConfigDtls1 = new RuleResponseModel();
         ruleResponseWithRuleConfigDtls1.setMessage(ruleRequestModel.getMessage());
         ruleResponseWithRuleConfigDtls1.setId(ruleRequestModel.getId());
-        ruleResponseWithRuleConfigDtls1.setRuleConfig(ruleConfig);
+        ruleResponseWithRuleConfigDtls1.setRuleConfig(ruleConfig1);
         ruleResponseWithRuleConfigDtlsList.add(ruleResponseWithRuleConfigDtls1);
         return ruleResponseWithRuleConfigDtlsList;
     }
