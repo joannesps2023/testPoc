@@ -47,13 +47,15 @@ public class TestRestController {
             ruleResponseWithRuleConfigDtls.setRuleConfig(ruleConfig);
             ruleResponseWithRuleConfigDtlsList.add(ruleResponseWithRuleConfigDtls);
 
-        ruleConfig.setConfigName("config2");
-        ruleConfig.setTemplateName("template2");
-        ruleConfig.setId("gid2");
-        ruleResponseWithRuleConfigDtls.setMessage(ruleRequestModel.getMessage());
-        ruleResponseWithRuleConfigDtls.setId(ruleRequestModel.getId());
-        ruleResponseWithRuleConfigDtls.setRuleConfig(ruleConfig);
-        ruleResponseWithRuleConfigDtlsList.add(ruleResponseWithRuleConfigDtls);
+        RuleConfig ruleConfig1 = new RuleConfig();
+        ruleConfig1.setConfigName("config2");
+        ruleConfig1.setTemplateName("template2");
+        ruleConfig1.setId("gid2");
+        RuleResponseModel ruleResponseWithRuleConfigDtls1 = new RuleResponseModel();
+        ruleResponseWithRuleConfigDtls1.setMessage(ruleRequestModel.getMessage());
+        ruleResponseWithRuleConfigDtls1.setId(ruleRequestModel.getId());
+        ruleResponseWithRuleConfigDtls1.setRuleConfig(ruleConfig);
+        ruleResponseWithRuleConfigDtlsList.add(ruleResponseWithRuleConfigDtls1);
         return ruleResponseWithRuleConfigDtlsList;
     }
 
