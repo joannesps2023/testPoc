@@ -28,7 +28,7 @@ public class TestRestController {
     }
 
     @PostMapping ("postTest")
-    public List<RuleResponseModel> postTest(@RequestBody RuleRequestModel ruleRequestModel)
+    public String postTest(@RequestBody RuleRequestModel ruleRequestModel)
     {
         List<RuleResponseModel> ruleResponseWithRuleConfigDtlsList = new ArrayList<>();
         System.out.println("inside postTest");
@@ -56,7 +56,7 @@ public class TestRestController {
         ruleResponseWithRuleConfigDtls1.setId(ruleRequestModel.getId());
         ruleResponseWithRuleConfigDtls1.setRuleConfig(ruleConfig);
         ruleResponseWithRuleConfigDtlsList.add(ruleResponseWithRuleConfigDtls1);
-        return ruleResponseWithRuleConfigDtlsList;
+        return "testString";
     }
 
 }
